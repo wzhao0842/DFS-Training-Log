@@ -63,7 +63,7 @@ int main(){
         scanf("%d%d%d", &cows[i].x, &cows[i].y, &cows[i].dis);
     }
     for(int i=0;i<n;i++){
-        for(int j=i+1;j<n;j++){
+        for(int j=0;j<n;j++){
             //any decimal need to increment the value by 1
             double preDis = (double)sqrt(pow(cows[i].x-cows[j].x, 2) + pow(cows[i].y-cows[j].y, 2));
             int realDis = preDis; 
@@ -72,7 +72,6 @@ int main(){
             }
             if(realDis <= cows[i].dis){
                 adj[i].push_back(j);
-                adj[j].push_back(i);
             }
         }
     }
